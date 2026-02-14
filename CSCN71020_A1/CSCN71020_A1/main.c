@@ -11,16 +11,25 @@ void main() {
 
 	printOptions();
 
-	int inputNum;
+	int inputNum = 0;
 
-	printf("Enter operation number: ");
-	scanf_s("%1o", &inputNum);
+	while (1) {
+		printf("Enter operation number: ");
+		scanf_s("%d", &inputNum);
 
-	switch (inputNum)
-	{
-	case 1:
-		add();
+		if (inputNum == 1) {
+			add();
+			break;
 	}
+		else if (inputNum == 2) {
+			subtract();
+			break;
+	}
+		else {
+			printf("Invalid input.\n");
+	}
+
+	return 0;
 
 }
 
@@ -44,6 +53,5 @@ void add() {
 	scanf_s("%lf", &num2);
 	result = num1 + num2;
 	printf("%lf + %lf = %lf\n", num1, num2, result);
-}
 
-lsadhjflkjasdlfa
+}
